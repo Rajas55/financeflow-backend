@@ -24,4 +24,5 @@ jobs:
         run: mvn clean package --file pom.xml
 
       - name: Build Docker Image
-        run: docker build -t financeflow-backend .
+        run: docker build -t financeflow-backend -f financeflow-backend/Dockerfile financeflow-backend
+
