@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "users")  // Change table name from "user" to "users"
+@Table(name = "users") // Use "users" to avoid reserved keywords
 @Data
 public class User {
 
@@ -18,5 +18,5 @@ public class User {
 
     private String email;
     private String password;
-    private String name; // New field for user's name
+    private String name; // Field to store the user's name
 }

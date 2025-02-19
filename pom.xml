@@ -9,23 +9,23 @@
     <artifactId>financeflow-backend</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <!-- Set Java version to 17 (adjust if you use a different version) -->
+    <!-- Set Java version to 17 -->
     <properties>
         <java.version>17</java.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
-    <!-- Inherit defaults from the Spring Boot starter parent -->
+    <!-- Inherit defaults from Spring Boot -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.3.8</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
 
     <dependencies>
-        <!-- Spring Boot Web: for building REST APIs -->
+        <!-- Spring Boot Web for building REST APIs -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -36,7 +36,7 @@
             <version>0.9.1</version>
         </dependency>
 
-        <!-- Spring Data JPA: for database interactions -->
+        <!-- Spring Data JPA for database interactions -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -46,7 +46,6 @@
             <artifactId>jaxb-api</artifactId>
             <version>2.3.1</version>
         </dependency>
-
         <!-- JAXB Runtime -->
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
@@ -54,14 +53,14 @@
             <version>2.3.1</version>
         </dependency>
 
-        <!-- H2 Database: in-memory DB for quick testing -->
+        <!-- H2 Database: In-memory DB for testing -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Lombok: reduce boilerplate code -->
+        <!-- Lombok to reduce boilerplate code -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -71,10 +70,14 @@
 
     <build>
         <plugins>
-            <!-- Spring Boot Maven Plugin: allows you to run the app via mvn spring-boot:run -->
+            <!-- Spring Boot Maven Plugin with explicit mainClass configuration -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!-- Replace with your main class's fully qualified name -->
+                    <mainClass>org.example.financeflowbackend.FinanceflowBackendApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
